@@ -1,0 +1,371 @@
+/* ===== STYLES GÉNÉRAUX ===== */
+/* Réinitialisation des marges et paddings pour tous les éléments */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclut padding et bordure dans la largeur/hauteur totale */
+    font-family: 'Arial', sans-serif; /* Police par défaut pour tout le document */
+}
+
+/* Style de base pour le corps de la page */
+body {
+    background-color: #f5f5f5; /* Couleur de fond légère pour la page */
+    color: #333; /* Couleur de texte principale */
+    line-height: 1.6; /* Espacement des lignes pour une meilleure lisibilité */
+}
+
+/* Conteneur principal du CV */
+.cv-container {
+    max-width: 1000px; /* Largeur maximale du CV */
+    margin: 20px auto; /* Centrage horizontal avec marge verticale */
+    background-color: white; /* Fond blanc pour le CV */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre légère pour effet de profondeur */
+    display: flex;
+    flex-direction: column; /* Organisation verticale des sections */
+}
+
+/* ===== EN-TÊTE DU CV ===== */
+header {
+    display: flex; /* Disposition flexible pour l'en-tête */
+    background-color: #673ab7; /* Couleur violette comme sur l'image originale */
+    color: white; /* Texte blanc pour contraste */
+    position: relative; /* Pour le positionnement des éléments enfants */
+}
+
+/* Barre latérale avec le titre "curriculum vitae" */
+.sidebar-title {
+    writing-mode: vertical-lr; /* Texte vertical */
+    transform: rotate(180deg); /* Rotation pour orientation correcte */
+    padding: 20px 10px; /* Espacement interne */
+    background-color: #00bcd4; /* Couleur turquoise */
+    text-transform: uppercase; /* Texte en majuscules */
+    font-size: 0.8rem; /* Taille de police réduite */
+    letter-spacing: 2px; /* Espacement entre les lettres */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrage du texte */
+}
+
+/* Zone principale de l'en-tête */
+.header-content {
+    padding: 30px; /* Espacement interne */
+    flex-grow: 1; /* Occupe tout l'espace disponible */
+}
+
+/* Style du nom dans l'en-tête */
+.header-text h1 {
+    font-size: 2rem; /* Taille de police grande pour le nom */
+    margin-bottom: 10px; /* Espacement sous le nom */
+    text-transform: uppercase; /* Nom en majuscules */
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Style du sous-titre (profession) */
+.subtitle {
+    font-size: 1rem; /* Taille de police moyenne */
+    margin-bottom: 20px; /* Espacement sous le sous-titre */
+    font-style: italic; /* Texte en italique */
+}
+
+/* Disposition des informations de contact */
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Disposition en deux colonnes */
+    gap: 10px; /* Espacement entre les éléments */
+    margin-top: 20px; /* Marge au-dessus de la section */
+}
+
+/* Style des lignes d'information de contact */
+.contact-info p {
+    display: flex;
+    align-items: center; /* Alignement vertical des icônes et du texte */
+    font-size: 0.9rem; /* Taille de police réduite */
+}
+
+/* Style des icônes dans les informations de contact */
+.contact-info i {
+    margin-right: 10px; /* Espacement entre l'icône et le texte */
+    color: #00bcd4; /* Couleur turquoise pour les icônes */
+}
+
+/* ===== CORPS PRINCIPAL DU CV ===== */
+main {
+    display: flex; /* Disposition flexible pour le corps principal */
+}
+
+/* Zone principale de contenu (côté gauche) */
+.main-content {
+    flex: 3; /* Prend 3/4 de l'espace disponible */
+    padding: 30px; /* Espacement interne */
+}
+
+/* Barre latérale (côté droit) */
+.sidebar {
+    flex: 1; /* Prend 1/4 de l'espace disponible */
+    background-color: #f9f9f9; /* Fond légèrement grisé */
+    padding: 30px 20px; /* Espacement interne */
+    border-left: 1px solid #eee; /* Bordure gauche légère */
+}
+
+/* ===== STYLE COMMUN DES SECTIONS ===== */
+section {
+    margin-bottom: 30px; /* Espacement entre les sections */
+}
+
+/* Style des titres de section */
+h2 {
+    color: #673ab7; /* Couleur violette pour les titres */
+    font-size: 1.5rem; /* Taille de police pour les titres */
+    margin-bottom: 15px; /* Espacement sous les titres */
+    text-transform: uppercase; /* Titres en majuscules */
+    position: relative; /* Pour le positionnement de la ligne décorative */
+    padding-bottom: 8px; /* Espace pour la ligne décorative */
+}
+
+/* Ligne décorative sous les titres */
+h2::after {
+    content: ''; /* Contenu vide pour l'élément pseudo */
+    position: absolute; /* Positionnement absolu */
+    bottom: 0; /* Aligné au bas du titre */
+    left: 0; /* Aligné à gauche */
+    width: 50px; /* Largeur de la ligne */
+    height: 3px; /* Hauteur/épaisseur de la ligne */
+    background-color: #673ab7; /* Couleur violette */
+}
+
+/* ===== SECTION PROFIL ===== */
+.profile-section p {
+    font-size: 1rem; /* Taille de police standard */
+    line-height: 1.6; /* Espacement des lignes */
+}
+
+/* ===== SECTIONS DIPLÔMES ET EXPÉRIENCES ===== */
+.education-item, .experience-item {
+    display: flex; /* Disposition flexible */
+    margin-bottom: 20px; /* Espacement entre les éléments */
+}
+
+/* Style des dates */
+.date {
+    width: 120px; /* Largeur fixe pour la colonne des dates */
+    font-size: 0.9rem; /* Taille de police réduite */
+    color: #673ab7; /* Couleur violette */
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Style des titres dans les sections diplômes et expériences */
+.education-details h3, .experience-details h3 {
+    font-size: 1.1rem; /* Taille de police moyenne */
+    margin-bottom: 5px; /* Espacement sous les titres */
+    color: #444; /* Couleur de texte foncée */
+}
+
+/* Style du texte dans les sections diplômes et expériences */
+.education-details p, .experience-details p {
+    font-size: 0.9rem; /* Taille de police réduite */
+    color: #666; /* Couleur de texte grise */
+}
+
+/* Style de la description de poste */
+.job-description {
+    font-style: italic; /* Texte en italique */
+    margin-top: 5px; /* Espacement au-dessus */
+}
+
+/* ===== SECTION COMPÉTENCES ===== */
+.skill-category {
+    margin-bottom: 20px; /* Espacement entre les catégories */
+}
+
+/* Style des titres de catégorie de compétence */
+.skill-category h3 {
+    color: #673ab7; /* Couleur violette */
+    font-size: 1.1rem; /* Taille de police moyenne */
+    margin-bottom: 10px; /* Espacement sous les titres */
+    text-transform: uppercase; /* Texte en majuscules */
+}
+
+/* Style des listes de compétences */
+.skill-category ul {
+    list-style-type: none; /* Suppression des puces par défaut */
+    padding-left: 15px; /* Indentation */
+}
+
+/* Style des éléments de liste de compétences */
+.skill-category li {
+    margin-bottom: 5px; /* Espacement entre les éléments */
+    position: relative; /* Pour le positionnement des puces personnalisées */
+    padding-left: 15px; /* Espace pour les puces personnalisées */
+    font-size: 0.9rem; /* Taille de police réduite */
+}
+
+/* Puces personnalisées pour les listes de compétences */
+.skill-category li::before {
+    content: '•'; /* Caractère de puce */
+    position: absolute; /* Positionnement absolu */
+    left: 0; /* Aligné à gauche */
+    color: #673ab7; /* Couleur violette */
+}
+
+/* ===== SECTIONS DE LA BARRE LATÉRALE ===== */
+.sidebar h2 {
+    font-size: 1.3rem; /* Taille de police légèrement réduite pour les titres */
+}
+
+/* ===== SECTION LANGUES ===== */
+.language-item {
+    display: flex;
+    justify-content: space-between; /* Espacement entre le nom et le niveau */
+    margin-bottom: 10px; /* Espacement entre les langues */
+    font-size: 0.9rem; /* Taille de police réduite */
+}
+
+/* Style des niveaux de langue */
+.language-level {
+    background-color: #673ab7; /* Fond violet */
+    color: white; /* Texte blanc */
+    padding: 2px 8px; /* Espacement interne */
+    border-radius: 3px; /* Coins arrondis */
+    font-size: 0.8rem; /* Taille de police très réduite */
+}
+
+/* ===== SECTION ATOUTS ===== */
+.strengths-section ul {
+    list-style-type: none; /* Suppression des puces par défaut */
+}
+
+/* Style des éléments de liste d'atouts */
+.strengths-section li {
+    margin-bottom: 5px; /* Espacement entre les éléments */
+    position: relative; /* Pour le positionnement des puces personnalisées */
+    padding-left: 15px; /* Espace pour les puces personnalisées */
+    font-size: 0.9rem; /* Taille de police réduite */
+}
+
+/* Puces personnalisées pour les listes d'atouts */
+.strengths-section li::before {
+    content: '•'; /* Caractère de puce */
+    position: absolute; /* Positionnement absolu */
+    left: 0; /* Aligné à gauche */
+    color: #673ab7; /* Couleur violette */
+}
+
+/* ===== SECTION INFORMATIQUE ===== */
+.it-skill {
+    margin-bottom: 15px; /* Espacement entre les compétences */
+}
+
+/* Style des noms de compétence informatique */
+.skill-name {
+    display: block; /* Affichage en bloc */
+    font-size: 0.9rem; /* Taille de police réduite */
+    margin-bottom: 5px; /* Espacement sous le nom */
+}
+
+/* Style des barres de progression */
+.skill-bar {
+    height: 8px; /* Hauteur de la barre */
+    background-color: #e0e0e0; /* Couleur de fond grise */
+    border-radius: 4px; /* Coins arrondis */
+    margin-bottom: 5px; /* Espacement sous la barre */
+}
+
+/* Style du niveau de compétence dans les barres */
+.skill-level {
+    height: 100%; /* Hauteur complète */
+    border-radius: 4px; /* Coins arrondis */
+    background-color: #673ab7; /* Couleur violette */
+}
+
+/* Niveaux spécifiques pour chaque compétence */
+.php {
+    width: 60%; /* Niveau PHP à 60% */
+}
+
+.office {
+    width: 75%; /* Niveau Office à 75% */
+}
+
+.html-css {
+    width: 80%; /* Niveau HTML/CSS à 80% */
+}
+
+/* Style des descriptions de compétence */
+.skill-description {
+    font-size: 0.8rem; /* Taille de police très réduite */
+    color: #666; /* Couleur de texte grise */
+    font-style: italic; /* Texte en italique */
+}
+
+/* ===== SECTION CENTRES D'INTÉRÊT ===== */
+.interests-section ul {
+    list-style-type: none; /* Suppression des puces par défaut */
+}
+
+/* Style des éléments de liste de centres d'intérêt */
+.interests-section li {
+    margin-bottom: 5px; /* Espacement entre les éléments */
+    position: relative; /* Pour le positionnement des puces personnalisées */
+    padding-left: 15px; /* Espace pour les puces personnalisées */
+    font-size: 0.9rem; /* Taille de police réduite */
+}
+
+/* Puces personnalisées pour les listes de centres d'intérêt */
+.interests-section li::before {
+    content: '•'; /* Caractère de puce */
+    position: absolute; /* Positionnement absolu */
+    left: 0; /* Aligné à gauche */
+    color: #673ab7; /* Couleur violette */
+}
+
+/* ===== PIED DE PAGE ===== */
+footer {
+    padding: 20px; /* Espacement interne */
+    text-align: center; /* Centrage du texte */
+    border-top: 1px solid #eee; /* Bordure supérieure légère */
+}
+
+/* Style des liens sociaux */
+.social-links {
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    gap: 20px; /* Espacement entre les liens */
+}
+
+/* Style des liens */
+.social-links a {
+    color: #673ab7; /* Couleur violette */
+    text-decoration: none; /* Suppression du soulignement */
+    font-size: 0.9rem; /* Taille de police réduite */
+    display: flex;
+    align-items: center; /* Alignement vertical des icônes et du texte */
+}
+
+/* Style des icônes dans les liens sociaux */
+.social-links i {
+    margin-right: 5px; /* Espacement entre l'icône et le texte */
+}
+
+/* ===== DESIGN RESPONSIVE ===== */
+@media (max-width: 768px) {
+    /* Changement de disposition pour les écrans étroits */
+    main {
+        flex-direction: column; /* Disposition verticale */
+    }
+    
+    /* Ajustement des informations de contact */
+    .contact-info {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+    
+    /* Ajustement des sections diplômes et expériences */
+    .education-item, .experience-item {
+        flex-direction: column; /* Disposition verticale */
+    }
+    
+    /* Ajustement des dates */
+    .date {
+        width: 100%; /* Largeur complète */
+        margin-bottom: 5px; /* Espacement sous les dates */
+    }
+}
