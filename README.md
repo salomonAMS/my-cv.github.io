@@ -24,7 +24,8 @@ Ouvrez le fichier `CV_Salomon_AMOUSSOU-KPAKPA.html` dans votre navigateur pour v
 ## Auteur
 
 Salomon AMOUSSOU-KPAKPA  
-Contact : amssalomon@gmail.com
+Email : amssalomon@gmail.com
+Contact/whatapp : +228 93285966
 
 ## Licence
 
